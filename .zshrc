@@ -109,4 +109,4 @@ export TERM="xterm-256color"
 
 # aliases
 alias wn="tmux rename-window -t $TMUX_PANE"
-
+alias gcurl='curl --header "Authorization: Bearer $(gcloud auth print-identity-token)"'
