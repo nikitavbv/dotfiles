@@ -106,6 +106,7 @@ unsetopt PROMPT_SP
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 export PATH="$PATH:$HOME/.sdkman/candidates/sbt/current/bin"
 export TERM="xterm-256color"
+export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # aliases
 alias wn="tmux rename-window -t $TMUX_PANE"
