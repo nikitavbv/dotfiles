@@ -112,3 +112,12 @@ export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pw
 # aliases
 alias wn="tmux rename-window -t $TMUX_PANE"
 alias gcurl='curl --header "Authorization: Bearer $(gcloud auth print-identity-token)"'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/nikitavbv/apps/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nikitavbv/apps/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/nikitavbv/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nikitavbv/apps/google-cloud-sdk/completion.zsh.inc'; fi
+
+[[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
+
