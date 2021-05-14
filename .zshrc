@@ -110,7 +110,7 @@ export DOCKER_BUILDKIT="1"
 export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # useful commnads
-# alias "update_dotifiles"="cd $DOTFILES_DIR && git pull origin master"
+alias "update_dotifiles"="cd $DOTFILES_DIR && git pull origin master"
 
 # aliases
 alias wn="tmux rename-window -t $TMUX_PANE"
