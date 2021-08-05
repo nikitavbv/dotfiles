@@ -2,3 +2,9 @@ font:
   size: 10.0
 
 background_opacity: 0.95
+
+shell:
+  program: /usr/bin/arch
+  args:
+    - "--arm64"
+    - /bin/zsh
