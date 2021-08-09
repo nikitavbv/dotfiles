@@ -107,6 +107,7 @@ export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 export PATH="$PATH:$HOME/.sdkman/candidates/sbt/current/bin"
 export TERM="xterm-256color"
 export DOCKER_BUILDKIT="1"
+export DOCKER_HOST="ssh://nikitavbv@universe.europe-central2-a.nikitavbv"
 export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # useful commnads
@@ -117,13 +118,19 @@ alias wn="tmux rename-window -t $TMUX_PANE"
 alias gcurl='curl --header "Authorization: Bearer $(gcloud auth print-identity-token)"'
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/nikitavbv/apps/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nikitavbv/apps/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/nikitavbv/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nikitavbv/apps/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# autostart tmux
+if [ -z "$TMUX" ]
+then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi
 
 [[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
 
