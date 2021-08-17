@@ -132,7 +132,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash completion
 
 # homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -f "/opt/homebrew/bin/brew" ]; then eval "$(/opt/homebrew/bin/brew shellenv)"; fi
 
 # autostart tmux
 if [ -z "$TMUX" ]
