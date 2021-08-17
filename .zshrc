@@ -123,7 +123,13 @@ if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zs
 # The next line enables shell command completion for gcloud.
 if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
 
+# saml2aws
 if [ -f "$HOME/.saml2aws.zsh.inc" ]; then . "$HOME/.saml2aws.zsh.inc"; fi
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash completion
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
