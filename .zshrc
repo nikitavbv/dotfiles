@@ -123,6 +123,8 @@ if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zs
 # The next line enables shell command completion for gcloud.
 if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
 
+if [ -f "$HOME/.saml2aws.zsh.inc" ]; then . "$HOME/.saml2aws.zsh.inc"; fi
+
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
